@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+ 
+    <head>
+        <title>Guess Who Am I</title>
+        
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/icons.css" />   
+        <!--   
+     <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/af.ui.css" title="default" />
+  -->
+      <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/main.css"  />
+      <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/appframework.css"  />
+      <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/lists.css"  />
+      <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/forms.css"  />
+      <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/buttons.css"  />        
+      <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/badges.css"  />        
+      <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/grid.css"  />
+
+      <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/android.css"  />
+      <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/win8.css"  />
+      <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/bb.css"  />
+      <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/ios.css"  />
+      <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/ios7.css"  />
+      <link rel="stylesheet" type="text/css" href="https://3844a04fa6eb131822a6607399bdf5ca73f7eb11.googledrive.com/host/0B62gBPaBuCeyOVlPQmp5S29oNmM/tizen.css"  />
+        
+      <link rel="stylesheet" type="text/css" href="https://51e43b32c2367f6ea1dc4ce066ad75416dacf26b.googledrive.com/host/0B62gBPaBuCeyS0U0UXlWTTNIN3c/af.actionsheet.css"  />
+      <link rel="stylesheet" type="text/css" href="https://51e43b32c2367f6ea1dc4ce066ad75416dacf26b.googledrive.com/host/0B62gBPaBuCeyS0U0UXlWTTNIN3c/af.popup.css"  />
+      <link rel="stylesheet" type="text/css" href="https://51e43b32c2367f6ea1dc4ce066ad75416dacf26b.googledrive.com/host/0B62gBPaBuCeyS0U0UXlWTTNIN3c/af.scroller.css"  />
+      <link rel="stylesheet" type="text/css" href="https://51e43b32c2367f6ea1dc4ce066ad75416dacf26b.googledrive.com/host/0B62gBPaBuCeyS0U0UXlWTTNIN3c/af.selectBox.css"  />
+      <!-- uncomment for intel.xdk apps 
+        <script type="text/javascript" charset="utf-8" src="intelxdk.js"></script>
+        <script type="text/javascript" charset="utf-8" src="xhr.js"></script>
+        -->
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/appframework.min.js"></script>
+        <!-- include af.desktopBrowsers.js on desktop browsers only -->
+        
+
+         <script>
+         function loadedPanel(what) {
+                //We are going to set the badge as the number of li elements inside the target
+                $.ui.updateBadge("#aflink", $("#af").find("li").length);
+            }
+
+
+            function unloadedPanel(what) {
+                console.log("unloaded " + what.id);
+            }
+
+            if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
+                var script = document.createElement("script");
+                script.src = "https://parttimekingjs.googlecode.com/svn/trunk/plugins/af.desktopBrowsers.js";
+                var tag = $("head").append(script);
+                //$.os.desktop=true;
+            }
+
+          //  $.feat.nativeTouchScroll=true;
+          
+        </script>        
+
+
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/plugins/af.actionsheet.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/plugins/af.css3animate.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/plugins/af.passwordBox.js"></script>          
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/plugins/af.scroller.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/plugins/af.selectBox.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/plugins/af.touchEvents.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/plugins/af.touchLayer.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/plugins/af.popup.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/ui/appframework.ui.js"></script>
+         <!-- <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/ui/transitions/all.js"></script> -->
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/ui/transitions/fade.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/ui/transitions/flip.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/ui/transitions/pop.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/ui/transitions/slide.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/ui/transitions/slideLeft.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/ui/transitions/slideDown.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/ui/transitions/slideUp.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://parttimekingjs.googlecode.com/svn/trunk/plugins/af.slidemenu.js"></script>
+
+
+
+        
+        
+        
+
+        <script type="text/javascript" src="cordova.js"></script>
+                <script type="text/javascript" charset="utf-8" src="js/inneractive.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://guesswhoami.googlecode.com/svn/trunk/js/language.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://guesswhoami.googlecode.com/svn/trunk/js/global.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://guesswhoami.googlecode.com/svn/trunk/js/list.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://guesswhoami.googlecode.com/svn/trunk/js/storage.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://guesswhoami.googlecode.com/svn/trunk/js/common.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://guesswhoami.googlecode.com/svn/trunk/js/tool.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://guesswhoami.googlecode.com/svn/trunk/js/ui.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://guesswhoami.googlecode.com/svn/trunk/js/init.js"></script>
+
+       
+    </head>
+ 
+    <body>
+        <div id="afui"></div>
+    </body>
+</html>
