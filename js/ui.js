@@ -1094,8 +1094,12 @@ function getHTMLOfMainDiv()
     var string = "";
 
     //restoreIndexPath();
-    
-    string += getHTMLOfImage( "resource/pic_question_mark_5.png", false );
+    var sPicURL = "resource/pic_question_mark_5.png";
+    if ( gbOnLineDemo )
+    {
+        sPicURL = "https://raw.githubusercontent.com/abc9070410/GuessWhoAmI/master/resource/pic_question_mark_5.png";
+    }
+    string += getHTMLOfImage( sPicURL, false );
     
     //string += getHTMLOfImage( "x-wmapp0:www/resource/pic_question_mark_2.png", false );
 
@@ -1137,7 +1141,7 @@ function getHTMLOfQuestionDiv()
         setCurrentName();
     }
 
-    addJS( getCurrentDirectory() + "/" + getCurrentFileName() );
+    addJS( getCurrentDirectory() + "/" + getCurrentFileName(), false );
     
     string += getHTMLOfCover();
 
@@ -1205,8 +1209,14 @@ function getHTMLOfScoreDiv()
     
     var iLineCount = 8;
     
-    var sFilePath1 = "resource/" + sFileName1;
-    var sFilePath2 = "resource/" + sFileName2;
+    var sFileDirectory = "resource/";
+    if ( gbOnLineDemo )
+    {
+        sFileDirectory = "https://raw.githubusercontent.com/abc9070410/GuessWhoAmI/master/resource/";
+    }
+    
+    var sFilePath1 = sFileDirectory + sFileName1;
+    var sFilePath2 = sFileDirectory + sFileName2;
     
     if ( giPlatform == PLATFORM_WP )
     {

@@ -15,6 +15,8 @@ var gSupportLanguageCount = 5; // UI .
 var gStationNameSupportLanguageCount = 2; // station name (now support ZH and EN) .
 var gLocalLanguageIndex = -1; // get the platform local index by Phonegap API
 
+var gbOnLineDemo = true; // online DEMO mode or not 
+
 var LOCATION_COUNT = 19;
 var STATION_COUNT = 222;
 
